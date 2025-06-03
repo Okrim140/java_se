@@ -15,6 +15,11 @@ public class BibbliotecaTest {
 				autori.put("Ernest Hemingway", true), mondadori);
 		String risposta = ArchivioController.nuovoLibro(ilVecchioeIlMare);
 		System.out.println(risposta);
+		
+		//String cf, String nome, String cognome
+		Abbonato paoloRossi = new Abbonato("CF1", "Paolo", "Rossi");
+		String rispostaAbbonato = ArchivioController.nuovoAbbonato(paoloRossi);
+		System.out.println(rispostaAbbonato);
 
 	}
 

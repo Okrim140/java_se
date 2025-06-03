@@ -1,5 +1,7 @@
 package day_07.Biblioteca;
 
+import java.util.Objects;
+
 public class Abbonato {
 	private String cf;
 	private String nome;
@@ -32,6 +34,24 @@ public class Abbonato {
 	}
 	public void setCognome(String cognome) {
 		this.cognome = cognome;
+	}
+	
+	
+	@Override
+	public int hashCode() {
+		return Objects.hash(cf, cognome, nome);
+	}
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Abbonato other = (Abbonato) obj;
+		return Objects.equals(cf, other.cf) && Objects.equals(cognome, other.cognome)
+				&& Objects.equals(nome, other.nome);
 	}
 	@Override
 	public String toString() {
