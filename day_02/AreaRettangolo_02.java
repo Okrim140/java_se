@@ -9,10 +9,9 @@ import java.util.Scanner;
 
  */
 
-public class AreaRettangolo {
+public class AreaRettangolo_02 {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		Scanner input = new Scanner (System.in);
 		System.out.println("Inserisci la base del rettangolo");
 		double base = input.nextDouble();

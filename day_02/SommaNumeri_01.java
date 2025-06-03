@@ -8,7 +8,7 @@ import java.util.Scanner;
  *numeri interi e stampi la loro somma
 */
 
-public class SommaNumeri {
+public class SommaNumeri_01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
