@@ -42,14 +42,14 @@ public class ArchivioController {
 		Prestito prestito = new Prestito (abbonato, libro, dataPrestito);
 		
 		for(int i = 0; i<prestiti.length; i++) {
-			if(prestiti[i].getLibro().getIsbn()==libro.getIsbn()) {
+			if(prestiti[i]!= null && prestiti[i].getLibro()!= null && prestiti[i].getLibro().getIsbn()!= null && prestiti[i].getLibro().getIsbn()==libro.getIsbn()) {
 				return "Libro gia in prestito";
 			}
 		}
 		for(int i = 0; i<prestiti.length; i++) {
 			if(prestiti[i]==null) {
 					prestiti[i]=prestito;
-					return "Prestito effettuato con successo";
+					return "Prestito effettuato con successo: " + libro.toString();
 				}
 			}
 		return "impossibile effettuare il prestito";
@@ -60,13 +60,24 @@ public class ArchivioController {
 			for(int i = 0; i<prestiti.length; i++) {
 				if(prestiti[i].getAbbonato().getCf()==abbonato.getCf() && prestiti[i].getLibro().getIsbn()==libro.getIsbn()) {
 					prestiti[i]=null;
-					return "Prestito chiuso";
+					return "Prestito chiuso" + libro.toString();
 				}
 			}
 		}
 		return "Prestito non trovato";
 	}
 	public static int libriInPrestito() {
-		return prestiti.length;
+		int count = 0;
+	//	for(Prestito prestiti: prestiti) {
+	//		if (prestiti!= null) {
+	//			count++;
+	//		}
+	//	}
+		for (int i = 0; i<prestiti.length; i++) {
+			if(prestiti[i]!= null) {
+				count++;
+			}
+		}
+		return count;
 	}
 }
