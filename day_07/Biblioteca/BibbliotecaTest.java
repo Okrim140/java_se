@@ -36,6 +36,7 @@ public class BibbliotecaTest {
 		String rispostaRestituzione1 = ArchivioController.restituzione(paoloRossi, ilRaccontoRealisticoconilWRW);
 		System.out.println(rispostaRestituzione1);
 		System.out.println("numero libri in presito: " + ArchivioController.libriInPrestito());
+		System.out.println(ArchivioController.stampaLibriinPrestito());
 	}
 
 }
