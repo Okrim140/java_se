@@ -3,7 +3,7 @@ package day_07.Biblioteca;
 import java.time.LocalDateTime;
 import java.util.HashMap;
 
-public class BibbliotecaTest {
+public class BibliotecaTest {
 
 	public static void main(String[] args) {
 		HashMap<String, Boolean> autori = new HashMap<>();
