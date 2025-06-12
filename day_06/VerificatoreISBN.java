@@ -22,19 +22,27 @@ import java.util.Scanner;
 public class VerificatoreISBN {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+
 		Scanner scanner = new Scanner(System.in);
 		System.out.print("inserisci un ISBN: ");
-		String isbn = scanner.nextLine();
+		String isbn = scanner.nextLine().toUpperCase();
 		isbn = isbn.replace("-", "");
 		isbn = isbn.replace(" ", "");
-		int somma = 0;
-		for (int i = 10, j = 0; i >= 1; i--, j++) {
-			somma += isbn.charAt(j) * i;
+		char[] caratteri = isbn.toCharArray();
+		if (caratteri[caratteri.length-1] == 'X') {
+			caratteri[caratteri.length-1] = 10;
 		}
-		if (somma % 11 == 0)
-			;
-
+		int somma = 0;
+		for (int i = caratteri.length, j = 0; i >= 0; i--, j++) {
+			somma = somma + Character.getNumericValue(caratteri[j]) * i;
+			}
+		if (somma % 11 == 0) {
+			System.out.println("ISBN valido");
+		}
+		else {
+			System.out.println("ISBN non valido");
+		}
+		
 	}
 
 }
